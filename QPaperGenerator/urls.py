@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^QuestionPaperFrom/', 'QPaperGenerator.QP.views.GenerateQuestionPaperGetDetails')
     # Example:
     # (r'^QPaperGenerator/', include('QPaperGenerator.foo.urls')),
 

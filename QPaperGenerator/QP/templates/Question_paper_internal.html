@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Question Paper Generator</title>
+		<style>
+			.TextLeft
+			{
+				text-align: left;
+			}
+			.TextRight
+			{
+				text-align: right;
+			}
+			#Header
+			{
+				text-align: center;
+			}
+			#MainContainer
+			{
+				width: 700px;
+				margin: 0 auto;
+				border: thin dotted;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+		{% if form %}
+			<form method="post" action="" >
+				Choose Subject Name :
+				<select name="SubjectName">
+					{% for f in form %}
+						<option value="{{ f }}">{{ f }}</option>
+					{% endfor %}					
+				</select>
+				<button type="submit">Generate</button>
+			</form>
+		{% else %}
+		-->
+		<div id="MainContainer">
+			
+			<div id="Header">
+				<h1>VELS University</h1>
+				<h2>School of Engineering</h2>
+				<h2>Department of Computer Science and Engineering</h2>
+				<div>
+					<span class="TextLeft">Subject Name : {{ SubjectName }}</span>
+					<span class = "TextRight">Subject Code : {{ SubjectCode }}</span>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</body>
+</html>

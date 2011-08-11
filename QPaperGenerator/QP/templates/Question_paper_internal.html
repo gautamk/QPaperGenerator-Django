@@ -20,12 +20,16 @@
 				margin: 0 auto;
 				border: thin dotted;
 			}
+            .questions
+            {
+                    font-size : 23px;
+            }
 		</style>
 	</head>
 	<body>
-		<!--
+		
 		{% if form %}
-			<form method="post" action="" >
+			<form method="get" action="{{ location }}" >
 				Choose Subject Name :
 				<select name="SubjectName">
 					{% for f in form %}
@@ -35,7 +39,7 @@
 				<button type="submit">Generate</button>
 			</form>
 		{% else %}
-		-->
+		
 		<div id="MainContainer">
 			
 			<div id="Header">
@@ -46,10 +50,32 @@
 					<span class="TextLeft">Subject Name : {{ SubjectName }}</span>
 					<span class = "TextRight">Subject Code : {{ SubjectCode }}</span>
 				</div>
+                
 			</div>
-			
+			<div id="PartA">
+                <h3>Part A </h3>
+                <ol>
+                {% for QA in QpaperA %}
+                    
+                    <li><div class="questions">
+                        {{ QA }}
+                    </div></li>
+                {% endfor %}
+                </ol>
+            </div>
+            
+			<div id="PartB">
+                <h3>Part B </h3>
+                <ol>
+                {% for QB in QpaperB %}
+                    <li><div class="questions">
+                        {{ QB }}
+                    </div></li>
+                {% endfor %}
+                </ol>
+            </div>
 		</div>
-		
+		{% endif %}
 		
 	</body>
 </html>

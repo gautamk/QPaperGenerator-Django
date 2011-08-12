@@ -4,6 +4,9 @@ from QPaperGenerator.QP.forms import *
 from QPaperGenerator.QP.models import *
 from django.http import HttpRequest ,HttpResponse
 
+def root(request):
+    return redirect('/admin')
+
 def GenerateQuestionPaperGetDetails(request):
     form  = {
             "form" :False,

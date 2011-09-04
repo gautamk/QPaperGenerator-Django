@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.safestring import mark_safe 
 # Create your models here.
 class Department(models.Model):
     name = models.CharField(max_length = 200)
@@ -31,8 +31,11 @@ class Question(models.Model):
     comments = models.TextField( null = True , blank = True)
     added_at = models.DateTimeField(auto_now=True)
     
+    def display_question(self): 
+        return mark_safe(self.question)
+    
     def __unicode__(self):
-        return self.question
+        return self.display_question()
     
     
     

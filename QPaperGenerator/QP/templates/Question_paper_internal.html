@@ -9,11 +9,16 @@
 			.TextRight
 			{
 				text-align: right;
+               
 			}
 			#Header
 			{
 				text-align: center;
 			}
+            #Header h1
+            {
+                font-size:25px
+            }
 			#MainContainer
 			{
 				width: 700px;
@@ -43,13 +48,10 @@
 		<div id="MainContainer">
 			
 			<div id="Header">
-				<h1>VELS University</h1>
-				<h2>School of Engineering</h2>
-				<h2>Department of Computer Science and Engineering</h2>
-				<div>
-					<span class="TextLeft">Subject Name : {{ SubjectName }}</span>
-					<span class = "TextRight">Subject Code : {{ SubjectCode }}</span>
-				</div>
+				<h1>VELS UNIVERSITY SCHOOL OF ENGINEERING</h1>
+                <p  class = "TextRight">Subject Code : {{ SubjectCode }}</p>
+                <p style="position:relative;bottom:40px;" class="TextLeft">Subject Title : {{ SubjectName }}</p>
+
                 
 			</div>
 			<div id="PartA">

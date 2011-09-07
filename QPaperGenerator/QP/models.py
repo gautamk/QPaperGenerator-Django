@@ -1,5 +1,9 @@
 from django.db import models
 from django.utils.safestring import mark_safe 
+from django.contrib.auth.models import User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes import generic
+from django.conf import settings
 # Create your models here.
 class Department(models.Model):
     name = models.CharField(max_length = 200)
@@ -18,6 +22,8 @@ class Subject(models.Model):
     
     def __unicode__(self):
         return self.name
+	
+
 
 class Question(models.Model):
     subject = models.ForeignKey('Subject')
@@ -36,6 +42,20 @@ class Question(models.Model):
     
     def __unicode__(self):
         return self.display_question()
+	
+
+class ImageAttachment(models.Model):
+    """A tag on an item."""
+    file = models.ImageField(upload_to=settings.IMAGE_UPLOAD_PATH)
+    thumbnail = models.ImageField(upload_to=settings.THUMBNAIL_UPLOAD_PATH)
+    creator = models.ForeignKey(User, related_name='image_attachments')
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.PositiveIntegerField()
+
+    content_object = generic.GenericForeignKey()
+
+    def __unicode__(self):
+        return self.file.name
     
     
     

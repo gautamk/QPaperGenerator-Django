@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^$','QPaperGenerator.QP.views.root'),
+    (r'^photologue/', include('photologue.urls')),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
                         {'document_root': '/home/gautam/Aptana Studio 3 Workspace/QPaperGenerator-Django/QPaperGenerator/media', 'show_indexes': True}),
 
